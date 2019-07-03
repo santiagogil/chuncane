@@ -1,5 +1,5 @@
 <a href="{{ .URL }}" class="no-underline mb2 db w-100 pa3">
-  {{ $time := time .ExpiryDate.Local }}
+  {{ $time := time .ExpiryDate }}
   <span class='italic red'>{{ $time.Day }} de {{ index $.Site.Data.mes (printf "%d" $time.Month) }} de {{ $time.Year }} a las {{$time.Hour}}:{{$time.Minute}}hs.
 </span>
       <h2 class="f3 lh-title mb1 primary tight word-wrap">{{ .Title }}</h2>
