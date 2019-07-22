@@ -2,16 +2,16 @@
 
 {{ partial "jumbotron" $ }}
 
-<div class="mw7 center mv5">
-  <ul class="flex-ns flex-wrap mhn1-ns pa3">
-      {{ range .Data.Terms.Alphabetical }}
-          <div class="w-50-ns ph1-ns flex ttc">
-
-            <li class='db pa3'><a href="{{ .Page.Permalink }}" class="f3 lh-title mb1 primary tight word-wrap link"><h2>{{ .Page.Title }}</h2></a></li>
-
-          </div>
-      {{ end }}
-  </ul>
-</div>
+<main class="mw7 center mv5">
+  <ol class="flex-ns flex-wrap mhn1-ns pa3">
+    {{ range .Data.Terms.Alphabetical }}
+        <li class='db pa3 w-50-ns ph1-ns flex ttc'>
+          <a href="{{ .Page.Permalink }}" class="f3 lh-title mb1 primary tight word-wrap link pa2">
+            <h3>{{ .Page.Title }}</h3>
+          </a>
+        </li>
+    {{ end }}
+  </ol>
+</main>
 
 {{end}}

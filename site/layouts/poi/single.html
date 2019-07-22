@@ -1,41 +1,57 @@
 {{ define "main" }}
 {{ $eventos := where .Site.Pages "Params.location" .Title }}
-  <div class="mw6 center ph4 pv4">
-
+<main class="mw6 center ph4 pv4">
+  <article>
+    <header>
       <h1 class="f2 lh-title mb3 primary tight word-wrap">{{ .Title }}</h1>
-    <div class="cms mw6">
+    </header>
+    <section>
       {{ with .Description }}
-      <span class="grey-3 f6 italic onum red dib">{{ . }}</span>
+        <h2 class='f3 primary'>Descripción</h2>
+        <span class="grey-3 f6 italic onum red dib">{{ . }}</span>
       {{ end }}
+      <h2 class='f3 primary'>Ubicación</h2>
       <p>en {{ .Params.location.address.streetaddress }}, {{ .Params.location.address.addressLocality }}, {{ .Params.location.address.addressRegion }}</p>
       {{ with .Params.map }}
-      <div class='pv3'><a href="{{ . }}" target="blank">Abrir en google maps</a></div>
+        <div class='pv3'><a href="{{ . }}" target="blank">Abrir en google maps</a></div>
       {{ end }}
+    </section>
+    <section class='mb3'>
+      <h2 class='f3 primary'>Contacto</h2>
       <dl>
-      {{ with .Params.email }}
-      <dt>email:</dt>
-      <dd class='ml0 mb3'><a href='mailto:{{ . }}'>{{ . }}</a></dd>
-      {{ end }}
-      {{ with .Params.facebook }}
-      <dt>facebook:</dt>
-      <dd class='ml0 mb3'><a href='https://facebook.com/{{ . }}'>{{ . }}</a></dd>
-      {{ end }}
-      {{ with .Params.instagram }}
-      <dt>instagram:</dt>
-      <dd class='ml0 mb3'><a href='https://instagram.com/{{ . }}'>{{ . }}</a></dd>
-      {{ end }}
-      {{ with .Params.twitter }}
-      <dt>twitter:</dt>
-      <dd class='ml0 mb3'><a href='https://twitter.com/{{ . }}'>{{ . }}</a></dd>
-      {{ end }}
-      {{ with .Params.web }}
-      <dt>web:</dt><a href='{{ . }}'>{{ . }}</a></dd>
-      {{ end }}
+        {{ with .Params.email }}
+          <dt>email:</dt>
+          <dd class='ml0 mb3'><a href='mailto:{{ . }}'>{{ . }}</a></dd>
+        {{ end }}
+        {{ with .Params.facebook }}
+          <dt>facebook:</dt>
+          <dd class='ml0 mb3'><a href='https://facebook.com/{{ . }}'>{{ . }}</a></dd>
+        {{ end }}
+        {{ with .Params.instagram }}
+          <dt>instagram:</dt>
+          <dd class='ml0 mb3'><a href='https://instagram.com/{{ . }}'>{{ . }}</a></dd>
+        {{ end }}
+        {{ with .Params.twitter }}
+          <dt>twitter:</dt>
+          <dd class='ml0 mb3'><a href='https://twitter.com/{{ . }}'>{{ . }}</a></dd>
+        {{ end }}
+        {{ with .Params.web }}
+          <dt>web:</dt>
+          <dd><a href='{{ . }}'>{{ . }}</a></dd>
+        {{ end }}
+      </dl>
+    </section>
+    <section class='mb3'>
       <h2 class='f3 mb3 primary'>Eventos</h2>
       {{ range $eventos }}
       {{ .Render "li" }}
       {{ end }}
-    </div>
-{{ partial "share-buttons.html" . }}
-  </div>
+    </section>
+    <footer>
+      <aside>
+        {{ partial "share-buttons.html" . }}
+      </aside>
+    </footer>
+  </article>
+</main>
 {{ end }}

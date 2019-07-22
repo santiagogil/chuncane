@@ -1,23 +1,26 @@
 {{ define "main" }}
-
-  <div class="mw6 center ph4 pv4">
-    <h1 class="f2 lh-title mb3 tight word-wrap">{{.Title}}</h1>
-    <div class="flex justify-between grey-3 mb2 f6 italic onum red">
-      {{ $time := time .Date }}
-      <span class=''>{{ index $.Site.Data.dia (printf "%d" $time.Weekday) }}
-      {{ $time.Day }}
-      de
-      {{ index $.Site.Data.mes (printf "%d" $time.Month) }}
-      </span>
-
-      <!-- <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>-->
-      <p>Tiempo de lectura: {{ .ReadingTime }} minutos</p>
-    </div>
-    <div class="cms mw6">
-      <p>{{ .Description }}</p>
+<main class="mw6 center ph4 pv4">
+  <article>
+    <header>
+      <h1 class="f2 lh-title mb3 tight word-wrap">{{.Title}}</h1>
+      <div class="flex justify-between grey-3 mb2 f6 italic onum red">
+        {{ $time := time .Date }}
+        <span class=''>{{ index $.Site.Data.dia (printf "%d" $time.Weekday) }}
+        {{ $time.Day }}
+        de
+        {{ index $.Site.Data.mes (printf "%d" $time.Month) }}
+        </span>
+        <span>Tiempo de lectura: {{ .ReadingTime }} minutos</span>
+      </div>
+    </header>
+    <section>
       {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}" class='lozad'/>{{ end }}
       {{ .Content }}
-    </div>
-      {{ partial "share-buttons.html" . }}
-  </div>
+    </section>
+    <footer>
+      <asset>
+        {{ partial "share-buttons.html" . }}
+      </asset>
+    </footer>
+</main>
 {{ end }}

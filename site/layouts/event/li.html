@@ -1,17 +1,25 @@
 {{ $locationpage := index (where .Site.Pages "Title" .Params.location) 0 }}
 {{ $town := $locationpage.Params.location.address.addresslocality }}
-<a href="{{ .URL }}" class="no-underline mb2 db w-100 pa3">
+<article class='w-50-ns ph1-ns mb3'>
+  <a href="{{ .URL }}" class="no-underline mb2 db pa2">
   {{ $time := time .ExpiryDate.Local }}
-  <span class='italic red'>{{ $time.Day }} de {{ index $.Site.Data.mes (printf "%d" $time.Month) }} de {{ $time.Year }} a las {{$time.Hour}}:{{$time.Minute}}hs.
-</span>
-      <h2 class="f3 lh-title mb1 primary tight word-wrap">{{ .Title }}</h2>
-      <h3 class='performer'>{{ .Params.performer }}</h3>
+    <header>
+      <span class='italic red'>
+        {{ $time.Day }} de {{ index $.Site.Data.mes (printf "%d" $time.Month) }} de {{ $time.Year }} a las {{$time.Hour}}:{{$time.Minute}}hs.
+      </span>
+      <h3 class="f4 lh-title mb1 primary tight word-wrap">{{ .Title }}</h3>
       {{ with .Params.location }}
-      <p>en {{ . }}, {{$town}}</p>
+        <p>en {{ . }}, {{$town}}</p>
       {{ end }}
       {{ with .Params.lugar }}
-      <p>en {{ . }}</p>
+        <p>en {{ . }}</p>
       {{ end }}
-      {{range .Params.tags}}<span class='mr3 f6 italic black'>{{.}}</span>{{end}}
-	<span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
-</a>
+      {{range .Params.tags}}
+        <span class='mr3 f6 italic black'>{{.}}</span>
+      {{end}}
+    </header>
+    <aside>
+      <span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
+    </aside>
+  </a>
+</article>

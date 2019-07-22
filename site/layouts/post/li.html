@@ -1,13 +1,20 @@
 <a href="{{ .URL }}" class="no-underline pa3 mb2 db w-100">
-	<h2 class="f3 lh-title mb2 primary tight word-wrap">{{ .Title }}</h2>
-      {{ $time := time .Date }}
-      <span class='grey-3 mb2 f6 italic onum red dib'>{{ index $.Site.Data.dia (printf "%d" $time.Weekday) }}
+  <header>
+    <h3 class="f3 lh-title mb2 primary tight word-wrap">{{ .Title }}</h3>
+    {{ $time := time .Date }}
+    <span class='grey-3 mb2 f6 italic onum red dib'>
+      {{ index $.Site.Data.dia (printf "%d" $time.Weekday) }}
       {{ $time.Day }}
       de
       {{ index $.Site.Data.mes (printf "%d" $time.Month) }}
-      </span>
-
-  <!-- <span class="mid-gray lh-title mb2">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>-->
-  <p class="mb0">{{ .Description }}</p>
-  <span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
+    </span>
+  </header>
+  <section>
+    <p class="mb0">{{ .Description }}</p>
+  </section>
+  <footer>
+    <aside>
+      <span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
+    </aside>
+  </footer>
 </a>

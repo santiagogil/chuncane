@@ -1,57 +1,68 @@
 {{ define "main" }}
-
-  <div class="mw6 center ph3 pv4">
-    <h1 class="f2 lh-title mb3 tight word-wrap">{{.Title}}</h1>
-    <div class="flex justify-between grey-3">
-    </div>
-    <div class="cms mw6">
+<main class="mw6 center ph3 pv4">
+  <article>
+    <header class='mb3'>
+      <h1 class="f2 lh-title mb3 tight word-wrap">{{.Title}}</h1>
+    </header>
+    <section class='mb3'>
+      <h2 class="f3 primary">Bio</h2>
       <p>{{ .Params.bio }}</p>
-      {{ if .Params.avatar }}<img src="{{ .Params.avatar }}" alt="{{ .Params.name }} {{ .Params.lastname}}" />{{ end }}
+    </section>
+    <section class='mb3'>
+      <h2 class="f3 primary">Contacto</h2>
       {{ with .Params.email }}
-      <div class='pv3'>email: <a href='mailto:{{ . }}'>{{ . }}</a></div>
+      <div class='pv2'>email: <a href='mailto:{{ . }}'>{{ . }}</a></div>
       {{ end }}
       {{ with .Params.facebook }}
-      <div class='pv3'>facebook: <a href='https://facebook.com/{{ . }}'>{{ . }}</a></div>
+      <div class='pv2'>facebook: <a href='https://facebook.com/{{ . }}'>{{ . }}</a></div>
       {{ end }}
       {{ with .Params.instagram }}
-      <div class='pv3'>instagram: <a href='https://instagram.com/{{ . }}'>{{ . }}</a></div>
+      <div class='pv2'>instagram: <a href='https://instagram.com/{{ . }}'>{{ . }}</a></div>
       {{ end }}
       {{ with .Params.twitter }}
-      <div class='pv3'>twitter: <a href='https://twitter.com/{{ . }}'>{{ . }}</a></div>
+      <div class='pv2'>twitter: <a href='https://twitter.com/{{ . }}'>{{ . }}</a></div>
       {{ end }}
       {{ with .Params.web }}
-      <div class='pv3'>web: <a href='{{ . }}'>{{ . }}</a></div>
+      <div class='pv2'>web: <a href='{{ . }}'>{{ . }}</a></div>
       {{ end }}
-{{ $obras := where .Site.Pages "Type" "figure" }}
-{{ $porartista := where .Site.Pages "Params.artist" .Title }}
-{{ $filtered := $obras | intersect $porartista }}
-	<div class="flex flex-wrap mhn1">
-{{ range $filtered }}
-      <figure class="w-100 ph1-ns mb3">
-        <img data-src="{{range first 1 .Params.images }}{{.}}{{end}}" alt="{{ .Title }}" class='lozad'>
-        <figcaption class='f6 pv1 tight black'>{{.Title}}</figcaption>
-      </figure>
-{{ end }}
-
-  </div>
-  {{ if .Params.salas }}
-  <h3>Podés encontrar sus obras en</h3>
-	<div class="flex flex-wrap mhn1">
-    <ul>
-{{ range .Params.salas }}
-  {{ with .sala }}
-  <li><h4><a class='' href='/poi/{{ . | urlize }}/'>{{ . }}</a></h4></li>
-  {{ end }}
-  {{ with .name }}
-  <li><h4>{{ . }}</h4></li>
-  {{ end }}
-{{ end }}
-
-    </ul>
-  </div>
-  {{ end }}
-    </div>
-{{ partial "share-buttons.html" . }}
-  </div>
+    </section>
+    <section class='mb3'>
+      <h2 class='f3 primary'>Obras</h2>
+      {{ $obras := where .Site.Pages "Type" "figure" }}
+      {{ $porartista := where .Site.Pages "Params.artist" .Title }}
+      {{ $filtered := $obras | intersect $porartista }}
+      <div class="flex flex-wrap mhn1">
+        {{ range $filtered }}
+          <figure class="w-100 ph1-ns mb3">
+            <img data-src="{{range first 1 .Params.images }}{{.}}{{end}}" alt="{{ .Title }}" class='lozad'>
+            <figcaption class='f6 pv1 tight black'>{{.Title}}</figcaption>
+          </figure>
+        {{ end }}
+      </div>
+    </section>
+    {{ if .Params.salas }}
+    <section class='mb3'>
+      <h2 class='f3 primary'>Podés encontrar sus obras en</h2>
+      <div class="flex flex-wrap mhn1">
+        <ul>
+          {{ range .Params.salas }}
+            {{ with .sala }}
+              <li><h4><a class='' href='/poi/{{ . | urlize }}/'>{{ . }}</a></h4></li>
+            {{ end }}
+            {{ with .name }}
+              <li><h4>{{ . }}</h4></li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+    {{ end }}
+    <footer class='mb3'>
+      <aside>
+        {{ partial "share-buttons.html" . }}
+      </aside>
+    </footer>
+  </article>
+</main>
 
 {{ end }}

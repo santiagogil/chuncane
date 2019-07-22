@@ -1,11 +1,19 @@
 {{ $locationpage := index (where .Site.Pages "Title" .Params.location) 0 }}
 {{ $town := $locationpage.Params.location.address.addresslocality }}
-<a href="{{ .URL }}" class="no-underline mb2 db w-100 pa3">
-  {{ range .Params.fixture }}
-  <span class='italic red mr2'>{{ .day }} {{ .hourstart }}hs.</span>
-  {{ end }}
-      <h2 class="f3 lh-title mb1 primary tight word-wrap">{{ .Title }}</h2>
+<article class="w-50-ns ph1-ns mb3">
+  <a href="{{ .URL }}" class="no-underline mb2 db pa2">
+    <header>
+      {{ range .Params.fixture }}
+      <span class='italic red mr2'>{{ .day }} {{ .hourstart }}hs.</span>
+      {{ end }}
+      <h3 class="f4 lh-title mb1 primary tight word-wrap">{{ .Title }}</h3>
       <p>en {{ .Params.location }}, {{ $town }}</p>
-      {{range .Params.tags}}<span class='mr3 f6 italic black'>{{.}}</span>{{end}}
-	<span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
-</a>
+      {{range .Params.tags}}
+        <span class='mr3 f6 italic black'>{{.}}</span>
+      {{end}}
+    </header>
+    <aside>
+      <span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
+    </aside>
+  </a>
+</article>

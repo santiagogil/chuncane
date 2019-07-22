@@ -17,5 +17,4 @@
 }
 .link:focus   {
   transition: color .15s ease-in;
-  outline: 1px dotted currentColor;
 }

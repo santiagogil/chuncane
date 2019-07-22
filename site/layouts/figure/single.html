@@ -1,12 +1,20 @@
 {{ define "main" }}
-
-  <div class="mw6 center ph4 pv4">
+<main class="mw6 center ph4 pv4">
+  <article>
+    <header>
     <h1 class='f2 primary mb3'>{{.Title}}</h1>
-      <figure class="w-100 ph1-ns mb3">
-        <img data-src="{{range first 1 .Params.images }}{{.}}{{end}}" alt="{{ .Title }}" class='lozad'>
-        <figcaption class='f6 pv1 tight black'>{{.Title}}, <a class='' href='/artist/{{ .Params.artist | urlize }}/'>{{ .Params.artist }}</a></figcaption>
-      </figure>
-
-{{ partial "share-buttons.html" . }}
-  </div>
+    </header>
+    <figure class="w-100 ph1-ns mb3">
+      <img data-src="{{range first 1 .Params.images }}{{.}}{{end}}" alt="{{ .Title }}" class='lozad'>
+      <figcaption class='f6 pv1 tight black'>
+        {{.Title}}, <a class='' href='/artist/{{ .Params.artist | urlize }}/'>{{ .Params.artist }}</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <aside>
+        {{ partial "share-buttons.html" . }}
+      </aside>
+    </footer>
+  </article>
+</main>
 {{ end }}

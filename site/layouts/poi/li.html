@@ -1,8 +1,14 @@
-<a href="{{ .URL }}" class="no-underline pa3 mb2 db w-100">
-	<h2 class="f3 lh-title mb1 primary tight word-wrap">{{ .Title }}</h2>
-  {{ with .Description }}
-  <span class="grey-3 f6 italic onum red dib">{{ . }}</span>
-  {{ end }}
-  <h3> {{ .Params.location.address.addressLocality }}</h3>
-  <span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
-</a>
+<article>
+  <a href="{{ .URL }}" class="no-underline pa3 mb2 db">
+    <header>
+    <h3 class="f4 lh-title mb1 primary tight word-wrap">{{ .Title }}</h3>
+    {{ with .Description }}
+    <span class="grey-3 f6 italic onum red dib">{{ . }}</span>
+    {{ end }}
+    <span> {{ .Params.location.address.addressLocality }}</span>
+    </header>
+    <aside>
+    <span class="link dib black mb0 sans-serif asc loose mt1">Seguí leyendo →</span>
+    </aside>
+  </a>
+</article>

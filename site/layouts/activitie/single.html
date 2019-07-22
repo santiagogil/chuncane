@@ -1,36 +1,46 @@
 {{ define "main" }}
 {{ $location := index (where .Site.Pages "Title" .Params.location) 0 }}
-  <div class="mw6 center ph4 pv4">
-
-  {{ range .Params.fixture }}
-  <span class='italic red mr2'>{{ .day }} {{ .hourstart }}hs.</span>
-  {{ end }}
-
-      <h1 class="f2 lh-title mb3 primary tight word-wrap">{{ .Title }}</h1>
-    <div class="cms mw6"> 
-
+<main class="mw6 center ph4 pv4">
+  <article>
+    <header class='mb3'>
+      {{ range .Params.fixture }}
+      <span class='italic red mr2'>{{ .day }} {{ .hourstart }}hs.</span>
+      {{ end }}
+      <h1 class="f2 lh-title primary tight word-wrap">{{ .Title }}</h1>
+      en <span><a class='' href='/poi/{{ .Params.location | urlize }}/'>{{ .Params.location }}</a></span>
+    </header>
       {{$src := index .Params.images 0}}
       {{$alt := print .Title  " en " .Params.location}}
       {{range .Params.tags}}<span class='mr3 f6 italic black'>{{.}}</span>{{end}}
-      <h2 class="f3 mb3 primary">Descripción</h2>
+    <section class='mb3'>
+      <h2 class="f3 primary">Descripción</h2>
       <p>{{ .Params.description | markdownify }}</p>
-      <h2 class="f3 mb3 primary">Lugar</h2>
-      <h4 class="f4 mb3"><a class='' href='/poi/{{ .Params.location | urlize }}/'>{{ .Params.location }}</a></h4>
+    </section>
+    <section class='mb3'>
+      <h2 class="f3 primary">Lugar</h2>
       <p>
-      {{$location.Params.location.address.streetaddress}}, {{$location.Params.location.address.postalcode}}, {{$location.Params.location.address.addresslocality}}, {{$location.Params.location.address.addressregion}}
+        {{$location.Params.location.address.streetaddress}}, {{$location.Params.location.address.postalcode}}, {{$location.Params.location.address.addresslocality}}, {{$location.Params.location.address.addressregion}}
       </p>
       <a href={{$location.Params.map}} target='blank'>Ver en google maps</a>
+    </section>
+    <section class='mb3'>
+      <h2 class="f3 primary">Flyer</h2>
       {{ partial "figure.html" (dict "class" "w-100 mb3" "src" $src "alt" $alt "caption" $alt)}} 
-      <h2 class="f3 mb3 primary">Otros talleres</h2>
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range first 4 (shuffle (where .Site.RegularPages "Type" "activitie")) }}
-				<div class="ph1-ns flex">
-					{{ .Render "li" }}
-				</div>
-			{{ end }}
-		</div>
-
+    </section>
+    <footer>
+      <aside>
+  {{ partial "share-buttons.html" . }}
+      </aside>
+    </footer>
+  </article>
+  <aside>
+    <h2 class="f3 mb3 primary">Otros talleres</h2>
+    <div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
+      {{ range first 4 (shuffle (where .Site.RegularPages "Type" "activitie")) }}
+        {{ .Render "li" }}
+      {{ end }}
     </div>
-{{ partial "share-buttons.html" . }}
-  </div>
+  </aside>
+</main>
+
 {{ end }}
