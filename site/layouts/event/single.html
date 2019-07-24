@@ -26,7 +26,7 @@
       {{ .Params.description | markdownify }}
     </section>
     <section class='mb3'>
-      <h2 class="f3 mb3 primary">Lugar</h2>
+      <h2 class="f3 mb3 primary mb3">Lugar</h2>
       {{ with .Params.location }}
         <p>
           {{$location.Params.location.address.streetaddress}}, {{$location.Params.location.address.postalcode}}, {{$location.Params.location.address.addresslocality}}, {{$location.Params.location.address.addressregion}}
@@ -38,7 +38,7 @@
       {{ end }}
     </section>
     <section class='mb3'>
-      <h2 class='f3 primary'>Flyer</h2>
+      <h2 class='f3 primary mb3'>Flyer</h2>
       {{ partial "figure.html" (dict "class" "w-100 mb3" "src" $src "alt" $alt "caption" $alt)}} 
     </section>
     <footer>

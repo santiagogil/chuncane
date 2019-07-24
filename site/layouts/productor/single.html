@@ -5,12 +5,12 @@
     <header>
     <h1 class="f2 lh-title mb3 tight word-wrap">{{.Title}}</h1>
     </header>
-    <section>
+    <section class='mb3 cms'>
       <h2 class='f3 primary'>Bio</h2>
-      <p>{{ .Params.bio }}</p>
+      {{ .Params.bio | markdownify }}
     </section>
-    <section>
-      <h2 class='f3 primary'>Contacto</h2>
+    <section class='mb3'>
+      <h2 class='f3 primary mb3'>Contacto</h2>
       {{ with .Params.email }}
       <div class='pv2'>email: <a href='mailto:{{ . }}'>{{ . }}</a></div>
       {{ end }}
@@ -27,8 +27,8 @@
       <div class='pv2'>web: <a href='{{ . }}'>{{ . }}</a></div>
       {{ end }}
     </section>
-    <section>
-      <h2 class='f3 primary'>Imágenes</h2>
+    <section class='mb3'>
+      <h2 class='f3 primary mb3'>Imágenes</h2>
       <div class="flex flex-wrap mhn1">
         {{ range .Params.images }}
           <figure class="w-100 ph1-ns mb3">
@@ -39,8 +39,8 @@
       </div>
     </section>
     {{ if .Params.comercios }}
-    <section>
-      <h2 class='f3 primary'>Podés encontrar sus productos en</h2>
+    <section class='mb3'>
+      <h2 class='f3 primary mb3'>Podés encontrar sus productos en</h2>
       <div class="flex flex-wrap mhn1">
         <ul>
           {{ range .Params.comercios }}

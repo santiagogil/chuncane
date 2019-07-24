@@ -9,7 +9,7 @@
       {{ .Params.bio | markdownify }}
     </section>
     <section class='mb3'>
-      <h2 class="f3 primary">Contacto</h2>
+      <h2 class="f3 primary mb3">Contacto</h2>
       {{ with .Params.email }}
       <div class='pv2'>email: <a href='mailto:{{ . }}'>{{ . }}</a></div>
       {{ end }}
@@ -27,7 +27,7 @@
       {{ end }}
     </section>
     <section class='mb3'>
-      <h2 class='f3 primary'>Obras</h2>
+      <h2 class='f3 primary mb3'>Obras</h2>
       {{ $obras := where .Site.Pages "Type" "figure" }}
       {{ $porartista := where .Site.Pages "Params.artist" .Title }}
       {{ $filtered := $obras | intersect $porartista }}
@@ -42,7 +42,7 @@
     </section>
     {{ if .Params.salas }}
     <section class='mb3'>
-      <h2 class='f3 primary'>Podés encontrar sus obras en</h2>
+      <h2 class='f3 primary mb3'>Podés encontrar sus obras en</h2>
       <div class="flex flex-wrap mhn1">
         <ul>
           {{ range .Params.salas }}

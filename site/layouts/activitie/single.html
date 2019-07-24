@@ -17,14 +17,14 @@
       {{ .Params.description | markdownify }}
     </section>
     <section class='mb3'>
-      <h2 class="f3 primary">Lugar</h2>
+      <h2 class="f3 primary mb3">Lugar</h2>
       <p>
         {{$location.Params.location.address.streetaddress}}, {{$location.Params.location.address.postalcode}}, {{$location.Params.location.address.addresslocality}}, {{$location.Params.location.address.addressregion}}
       </p>
       <a href={{$location.Params.map}} target='blank'>Ver en google maps</a>
     </section>
     <section class='mb3'>
-      <h2 class="f3 primary">Flyer</h2>
+      <h2 class="f3 primary mb3">Flyer</h2>
       {{ partial "figure.html" (dict "class" "w-100 mb3" "src" $src "alt" $alt "caption" $alt)}} 
     </section>
     <footer>

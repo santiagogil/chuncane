@@ -12,14 +12,14 @@
       {{ end }}
     </section>
     <section class='mb3'>
-      <h2 class='f3 primary'>Ubicación</h2>
+      <h2 class='f3 primary mb3'>Ubicación</h2>
       <p>en {{ .Params.location.address.streetaddress }}, {{ .Params.location.address.addressLocality }}, {{ .Params.location.address.addressRegion }}</p>
       {{ with .Params.map }}
         <div class='pv3'><a href="{{ . }}" target="blank">Abrir en google maps</a></div>
       {{ end }}
     </section>
     <section class='mb3'>
-      <h2 class='f3 primary'>Contacto</h2>
+      <h2 class='f3 primary mb3'>Contacto</h2>
       <dl>
         {{ with .Params.email }}
           <dt>email:</dt>
