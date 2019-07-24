@@ -14,7 +14,7 @@
               {{ $src }}.480w.jpg 480w"
       sizes="100vw"
       type="image/jpeg">
-      <img class='{{.class}}' src="{{ $src }}-480.jpg" alt="{{ .alt }}">
+      <img class='{{.class}}' src="{{ $src }}.480w.jpg" alt="{{ .alt }}">
   </picture>
   <figcaption>
     <div class='tr f6 pa3 tight black'><a href='/figure/{{ urlize .title}}'>{{.title}}</a>, <a href='/artist/{{ urlize .artist }}'>{{.artist}}</a>, {{.town}}</div>
