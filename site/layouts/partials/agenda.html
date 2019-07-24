@@ -3,11 +3,9 @@
 
 		<h2 class="f1 lh-title mb3 ml3 tight">Eventos</h1>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
+		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3 pa2">
 			{{ range first 4 (where .Data.Pages.ByExpiryDate "Type" "event") }}
-				<div class="ph1-ns w-50-ns flex">
 					{{ .Render "li" }}
-				</div>
 			{{ end }}
 		</div>
 
