@@ -5,11 +5,13 @@
     <header>
       <h1 class="f2 lh-title mb3 primary tight word-wrap">{{ .Title }}</h1>
     </header>
-    <section>
       {{ with .Description }}
+    <section class='mb3 cms'>
         <h2 class='f3 primary'>Descripción</h2>
         <span class="grey-3 f6 italic onum red dib">{{ . }}</span>
       {{ end }}
+    </section>
+    <section class='mb3'>
       <h2 class='f3 primary'>Ubicación</h2>
       <p>en {{ .Params.location.address.streetaddress }}, {{ .Params.location.address.addressLocality }}, {{ .Params.location.address.addressRegion }}</p>
       {{ with .Params.map }}

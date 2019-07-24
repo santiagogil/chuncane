@@ -17,13 +17,13 @@
         <span>{{ . }}</span>
       {{ end }}
     </header>
-    <section class="mb3">
+    <section class="mb3 cms">
       {{$src := index .Params.images 0}}
       {{$loc := .Params.lugar | default .Params.location }} 
       {{$alt := print .Title  " en " $loc}}
       {{range .Params.tags}}<span class='mr3 f6 italic black'>{{.}}</span>{{end}}
       <h2 class="f3 mb3 primary">Descripción</h2>
-      <p>{{ .Params.description | markdownify }}</p>
+      {{ .Params.description | markdownify }}
     </section>
     <section class='mb3'>
       <h2 class="f3 mb3 primary">Lugar</h2>

@@ -4,9 +4,9 @@
     <header class='mb3'>
       <h1 class="f2 lh-title mb3 tight word-wrap">{{.Title}}</h1>
     </header>
-    <section class='mb3'>
+    <section class='mb3 cms'>
       <h2 class="f3 primary">Bio</h2>
-      <p>{{ .Params.bio }}</p>
+      {{ .Params.bio | markdownify }}
     </section>
     <section class='mb3'>
       <h2 class="f3 primary">Contacto</h2>
@@ -64,5 +64,4 @@
     </footer>
   </article>
 </main>
-
 {{ end }}

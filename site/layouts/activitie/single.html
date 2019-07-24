@@ -12,9 +12,9 @@
       {{$src := index .Params.images 0}}
       {{$alt := print .Title  " en " .Params.location}}
       {{range .Params.tags}}<span class='mr3 f6 italic black'>{{.}}</span>{{end}}
-    <section class='mb3'>
+    <section class='mb3 cms'>
       <h2 class="f3 primary">Descripción</h2>
-      <p>{{ .Params.description | markdownify }}</p>
+      {{ .Params.description | markdownify }}
     </section>
     <section class='mb3'>
       <h2 class="f3 primary">Lugar</h2>
