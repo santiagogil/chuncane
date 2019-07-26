@@ -21,17 +21,18 @@ window.addEventListener('load', () => {
 
   let url = window.location.href
   let title = document.title
-  let share = document.getElementById('share')
-  if (share && navigator.share) {
+  let shareul = document.getElementById('share')
+  console.log(shareul, window.navigator.share)
+  if (shareul && navigator.share) {
     let shareicon = document.createElement('li')
     let inner = `<span id="web-share" href="" class="link bg-white black db relative br-100 pa2" aria-label="Compartir">
     <svg width="16px" height="16px" class="db">
       <use xlink:href="/static/img/icons-share.svg"></use>
     </svg>
   </span>`
-    shareicon.innerHtml = inner
+    shareicon.innerHTML = inner
     shareicon.classList.add('dib', 'ph2', 'raise')
-    share.appendChild(shareicon)
+    shareul.appendChild(shareicon)
     shareicon.addEventListener('click', event => {
       navigator.share({"url": url, "title": title})
       .then(console.log)
