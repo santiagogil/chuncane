@@ -2,7 +2,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141188337-1"></script>
   <title>
-    {{ if eq .Title "Chuncane" }}lo que nos hace únicos{{else}}{{.Title}}{{with .Paginator}} {{ .PageNumber }}{{ end }}{{end}}
+    {{ if eq .Title "Chuncane" }}lo que nos hace únicos{{else}}{{.Title | truncate 145}}{{with .Paginator}} {{ .PageNumber }}{{ end }}{{end}}
     | Chuncane</title>
   <meta name="description" content="{{ .Description | markdownify | plainify | truncate 155 }} {{ with .Summary }}{{ . | markdownify | plainify | truncate 155  }}{{ end }} {{ with .Params.bio }}{{ . | markdownify | plainify | truncate 155  }}{{ end }}{{with .Paginator}} pág. {{ .PageNumber }}{{ end }}{{ if eq .Type "poi"}} Ubicación, eventos y otros datos de interés sobre {{ .Title }}{{ end }}">
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
