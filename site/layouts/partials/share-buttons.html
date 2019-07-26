@@ -2,10 +2,9 @@
 {{ $fburl := print "http://www.facebook.com/share.php?u=" $pageurl }}
 {{ $twurl := print "http://twitter.com/home?status=" $pageurl }}
 <div id="share-buttons" class='mv4'>
-  <ul class="mhn2">
+  <ul id='share' class="mhn2">
     {{ partial "social-icon-inverted" (dict "link" $fburl "svg" "icons-facebook" "title" "Compartir en Facebook") }}
 					{{ partial "social-icon-inverted" (dict "link"  $twurl "svg" "icons-twitter" "title" "Compartir en Twitter") }}
-					{{ partial "web-share-inverted" (dict "svg" "icons-share" "title" "Compartir") }}
 				</ul>
 
 </div>

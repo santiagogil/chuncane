@@ -1,44 +1,53 @@
 // JS Goes here - ES6 supported
 //javascript file
 var lozad = require('lozad')
+const observer = lozad()
 
-      const observer = lozad()
-
-  window.addEventListener('load', () => {
-      observer.observe()
-
-      let sidebar = document.getElementById('sidebar')
-      let hamburger = document.getElementById('hamburger')
-      let close = document.getElementById('close')
-
+window.addEventListener('load', () => {
+  observer.observe()
+  
+  let sidebar = document.getElementById('sidebar')
+  let hamburger = document.getElementById('hamburger')
+  let close = document.getElementById('close')
   hamburger.addEventListener('click', event => {
       event.preventDefault()
       sidebar.classList.toggle('transform-off')
   })
-
   close.addEventListener('click', event => {
       event.preventDefault()
       hamburger.style.transform = ''
       sidebar.classList.toggle('transform-off')
   })
-    let share = document.getElementById('web-share')
-    let url = window.location.href
-    let title = document.title
-    if (share) {
-      if (!navigator.share) return share.remove()
-      share.addEventListener('click', event => {
-        // event.preventDefault()
-        if (!navigator.share) return share.remove()
-        navigator.share({"url": url, "title": title})
-          .then(console.log)
-          .catch(console.log)
-      })
-    }
+
+  let url = window.location.href
+  let title = document.title
+  let share = document.getElementById('share')
+  if (share && navigator.share) {
+    let shareicon = document.createElement('li')
+    let inner = `<span id="web-share" href="" class="link bg-white black db relative br-100 pa2" aria-label="Compartir">
+    <svg width="16px" height="16px" class="db">
+      <use xlink:href="/static/img/icons-share.svg"></use>
+    </svg>
+  </span>`
+    shareicon.innerHtml = inner
+    shareicon.classList.add('dib', 'ph2', 'raise')
+    share.appendChild(shareicon)
+    shareicon.addEventListener('click', event => {
+      navigator.share({"url": url, "title": title})
+      .then(console.log)
+      .catch(console.log)
+    })
+  }
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-141188337-1');
+
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+  }
+
+
 })
 // if (window.netlifyIdentity) {
 //   window.netlifyIdentity.on("init", user => {
@@ -50,11 +59,4 @@ var lozad = require('lozad')
 //   });
 // }
 // Check that service workers are registered
-if ('serviceWorker' in navigator) {
-  // Use the window load event to keep the page load performant
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js');
-  });
-}
-
 
