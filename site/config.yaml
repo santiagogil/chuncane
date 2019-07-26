@@ -2,6 +2,7 @@ baseurl: "https://chuncane.com/"
 DefaultContentLanguage: "es"
 languageCode: "es-ar"
 title: "Inicio"
+removePathAccents: true
 params:
   description: Lo que nos hace únicos 
   images:
