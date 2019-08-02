@@ -16,6 +16,8 @@ description: |-
 
   * En facebook: https://www.facebook.com/titeresrobertowhite.white
   * En youtube: https://www.youtube.com/channel/UCz4JfYLs9380mII69Jubcgw
+
+  {{< youtube HbiF8Zhm0eU >}}
 images:
   - /img/seminario-roberto-white-en-amigos-de-merlo.jpg
 ---
