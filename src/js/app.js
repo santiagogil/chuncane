@@ -2,37 +2,18 @@
 //javascript file
 var lozad = require('lozad')
 const observer = lozad()
-
-window.addEventListener('load', () => {
-  requestIdleCallback(observer.observe)
-  requestIdleCallback(sharebutton)
-  requestIdleCallback(sidebar)
-  
-
-
-
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-141188337-1');
 
-  if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
-  }
 
-
+window.addEventListener('load', () => {
+  requestIdleCallback(observer.observe)
+  requestIdleCallback(sharebutton)
+  requestIdleCallback(sidebar)
+  requestIdleCallback(registerworker)
 })
-// if (window.netlifyIdentity) {
-//   window.netlifyIdentity.on("init", user => {
-//     if (!user) {
-//       window.netlifyIdentity.on("login", () => {
-//         document.location.href = "/admin/";
-//       });
-//     }
-//   });
-// }
-// Check that service workers are registered
-
 function sharebutton () {
   let url = window.location.href
   let title = document.title
@@ -45,14 +26,10 @@ function sharebutton () {
     </svg>
   </span>`
     shareicon.innerHTML = inner
-    console.log(inner)
     shareicon.classList.add('dib', 'ph2', 'raise')
     shareul.appendChild(shareicon)
-    console.log(shareul)
     shareicon.addEventListener('click', event => {
       navigator.share({"url": url, "title": title})
-      .then(console.log)
-      .catch(console.log)
     })
   }
 }
@@ -72,4 +49,8 @@ function sidebar () {
 function transformoff () {
   sidebar.classList.toggle('transform-off')
 }
+function registerworker () {
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+  }
 }
