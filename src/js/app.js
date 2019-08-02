@@ -2,10 +2,10 @@
 //javascript file
 var lozad = require('lozad')
 const observer = lozad()
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-141188337-1');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-141188337-1');
 
 
 window.addEventListener('load', () => {
@@ -46,6 +46,7 @@ function sidebar () {
       hamburger.style.transform = ''
       requestAnimationFrame(transformoff)
   })
+}
 function transformoff () {
   sidebar.classList.toggle('transform-off')
 }
