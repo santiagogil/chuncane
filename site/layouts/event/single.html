@@ -25,6 +25,11 @@
       <h2 class="f3 mb3 primary">Descripción</h2>
       {{ .Params.description | markdownify }}
     </section>
+    {{ with .Content }}
+    <section class='mb3 cms'>
+      {{ . }}
+    </section>
+    {{ end }}
     <section class='mb3'>
       <h2 class="f3 mb3 primary mb3">Lugar</h2>
       {{ with .Params.location }}
@@ -77,7 +82,7 @@
     }
   },
   "image": {{ .Params.images }},
-  "description": "{{ .Description | markdownify}}"
+  "description": "{{ .Description | markdownify | plainify }}"
 }
 </script>
 {{ end }}

@@ -14,21 +14,21 @@ description: >-
   Damian Juarez.
 
 
-  ## Para ir palpitando
-
-   {{< youtube DX63z05kOpA >}}
-
-  * Sitio oficial de Canto 4: http://canto4.com/
-
-  * Canto 4 en youtube: https://www.youtube.com/user/canto4VEVO
-
-  * Canto 4 en facebook: https://www.facebook.com/Canto4Oficial
-
-
-  * Exequiel Amaya en facebook: https://www.facebook.com/elpuntano.amaya
-
-  * Damián Juarez en facebook: https://www.facebook.com/damian.juarez.714
 images:
   - /img/peña-del-sol-club-san-martin.jpg
 ---
+## Para ir palpitando
+
+ {{< youtube DX63z05kOpA >}}
+
+* Sitio oficial de Canto 4: http://canto4.com/
+
+* Canto 4 en youtube: https://www.youtube.com/user/canto4VEVO
+
+* Canto 4 en facebook: https://www.facebook.com/Canto4Oficial
+
+
+* Exequiel Amaya en facebook: https://www.facebook.com/elpuntano.amaya
+
+* Damián Juarez en facebook: https://www.facebook.com/damian.juarez.714
 

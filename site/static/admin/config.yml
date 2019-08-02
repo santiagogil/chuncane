@@ -33,6 +33,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "images"
         widget: "list"
         field: {label: Image, name: image, widget: image}
+      - {label: "Contenido", name: "body", widget: "markdown"}
       - {label: "Email", name: "email", widget: "text", required: false}
       - {label: "Facebook", name: "facebook", widget: "text", required: false}
       - {label: "Instagram", name: "instagram", widget: "text", required: false}
@@ -65,6 +66,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Fecha de publicación", name: "date", widget: "datetime"}
       - {label: "Avatar", name: "avatar", widget: "image", required: false}
       - {label: "Bio", name: "bio", widget: "markdown", required: false}
+      - {label: "Contenido", name: "body", widget: "markdown"}
       - {label: "Pueblo", name: "town", widget: "string", required: false}
       - {label: "Email", name: "email", widget: "text", required: false}
       - {label: "Facebook", name: "facebook", widget: "text", required: false}
@@ -96,6 +98,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Fecha de publicación", name: "date", widget: "datetime"}
       - {label: "Avatar", name: "avatar", widget: "image", required: false}
       - {label: "Bio", name: "bio", widget: "markdown", required: false}
+      - {label: "Contenido", name: "body", widget: "markdown"}
       - {label: "Pueblo", name: "town", widget: "string", required: false}
       - {label: "Email", name: "email", widget: "text", required: false}
       - {label: "Facebook", name: "facebook", widget: "text", required: false}
@@ -141,6 +144,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Lugar", name: "lugar", widget: "string", required: false}
       - {label: "Start Date", name: "expirydate", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
+      - {label: "Contenido", name: "body", widget: "markdown"}
       - label: "Imagenes og"
         name: "images"
         widget: "list"
@@ -178,6 +182,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "images"
         widget: "list"
         field: {label: Image, name: image, widget: image}
+      - {label: "Contenido", name: "body", widget: "markdown"}
   - name: "figure"
     label: "Obras"
     folder: "site/content/figure"

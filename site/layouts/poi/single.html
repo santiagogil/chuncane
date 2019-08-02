@@ -9,8 +9,13 @@
     <section class='mb3 cms'>
         <h2 class='f3 primary'>Descripción</h2>
         <span class="grey-3 f6 italic onum red dib">{{ . }}</span>
-      {{ end }}
     </section>
+      {{ end }}
+    {{ with .Content }}
+    <section class='mb3 cms'>
+      {{ . }}
+    </section>
+    {{ end }}
     <section class='mb3'>
       <h2 class='f3 primary mb3'>Ubicación</h2>
       <p>en {{ .Params.location.address.streetaddress }}, {{ .Params.location.address.addressLocality }}, {{ .Params.location.address.addressRegion }}</p>

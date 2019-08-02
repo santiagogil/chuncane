@@ -8,6 +8,11 @@
       <h2 class="f3 primary">Bio</h2>
       {{ .Params.bio | markdownify }}
     </section>
+    {{ with .Content }}
+    <section class='mb3 cms'>
+      {{ . }}
+    </section>
+    {{ end }}
     <section class='mb3'>
       <h2 class="f3 primary mb3">Contacto</h2>
       {{ with .Params.email }}
