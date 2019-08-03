@@ -46,10 +46,11 @@ function sidebar () {
       hamburger.style.transform = ''
       requestAnimationFrame(transformoff)
   })
+  function transformoff () {
+    sidebar.classList.toggle('transform-off')
+  }
 }
-function transformoff () {
-  sidebar.classList.toggle('transform-off')
-}
+
 function registerworker () {
   if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js');
