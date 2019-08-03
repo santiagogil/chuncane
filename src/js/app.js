@@ -9,9 +9,9 @@ gtag('config', 'UA-141188337-1');
 
 
 window.addEventListener('load', () => {
+  requestIdleCallback(sidebar)
   requestIdleCallback(observer.observe)
   requestIdleCallback(sharebutton)
-  requestIdleCallback(sidebar)
   requestIdleCallback(registerworker)
 })
 function sharebutton () {
