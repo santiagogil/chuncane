@@ -134,6 +134,7 @@ gulp.task("generate-service-worker", ["js", "css"], () => {
                 handler: "networkFirst",
                 options: {
                     cacheName: "html",
+                    networkTimeoutSeconds: 10,
                     expiration: {
                         maxAgeSeconds: 60 * 60 * 24 * 7,
                     },
