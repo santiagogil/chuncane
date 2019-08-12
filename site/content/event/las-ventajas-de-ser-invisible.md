@@ -11,4 +11,4 @@ images:
 ---
 ## Trailer
 
-{{ youtube U98NtlAvHl8 }}
+{{< yt U98NtlAvHl8 >}}

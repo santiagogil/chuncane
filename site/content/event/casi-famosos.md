@@ -9,4 +9,4 @@ images:
 ---
 ## Trailer
 
-{{ youtube AkqO4tmI36M }}
+{{< yt AkqO4tmI36M >}}
