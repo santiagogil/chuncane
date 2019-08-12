@@ -11,4 +11,4 @@ images:
 ---
 ## Trailer
 
-{{ youtube e3eoMk-c-1U }}
+{{< yt e3eoMk-c-1U >}}
