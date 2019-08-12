@@ -12,14 +12,12 @@ description: >-
   Exequiel Amaya y Los de la Peña!!! Desde las 21 hs. en el Club San Martín!!!
   Entradas anticipadas $ 150.- Entrada general $ 200.- — con Exequiel Amaya y
   Damian Juarez.
-
-
 images:
   - /img/peña-del-sol-club-san-martin.jpg
 ---
 ## Para ir palpitando
 
- {{< youtube DX63z05kOpA >}}
+ {{< yt DX63z05kOpA >}}
 
 * Sitio oficial de Canto 4: http://canto4.com/
 
