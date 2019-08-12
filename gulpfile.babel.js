@@ -131,7 +131,7 @@ gulp.task("generate-service-worker", ["js", "css"], () => {
         runtimeCaching: [
             {
                 urlPattern: /(?:\/)$/,
-                handler: "staleWhileRevalidate",
+                handler: "networkFirst",
                 options: {
                     cacheName: "html",
                     expiration: {
