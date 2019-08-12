@@ -19,8 +19,8 @@ Silvia Rivera Cusicanqui (1949, La Paz, Bolivia) es una socióloga, activista, t
 
 En 1983 creó junto con otros intelecuales aymaras el Taller de Historia Oral Andina (THOA), el cual trabaja temas de oralidad, identidad y movimientos sociales indígenas y populares aymaras.
 
-Via (wikipedia)[https://es.wikipedia.org/wiki/Silvia_Rivera_Cusicanqui]
+Via [wikipedia](https://es.wikipedia.org/wiki/Silvia_Rivera_Cusicanqui)
 
 ## En Historias Debidas por Canal Encuentro
 
-{{ youtube 1q6HfhZUGhc }}
+{{< youtube 1q6HfhZUGhc >}}
