@@ -9,4 +9,4 @@ images:
 ---
 ## Para ir entrando en calor
 
-{{ youtube HbiF8Zhm0eU }}
+{{< yt HbiF8Zhm0eU >}}
