@@ -11,4 +11,4 @@ images:
 ---
 ## Trailer
 
-{{ youtube bPJIejJCvUg }}
+{{< yt bPJIejJCvUg >}}
