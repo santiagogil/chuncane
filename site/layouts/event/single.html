@@ -25,9 +25,9 @@
       <h2 class="f3 mb3 primary">Descripción</h2>
       {{ .Params.description | markdownify }}
     </section>
-    {{ with .Content }}
+    {{ if .Content }}
     <section class='mb3 cms'>
-      {{ . }}
+      {{ .Content }}
     </section>
     {{ end }}
     <section class='mb3'>
