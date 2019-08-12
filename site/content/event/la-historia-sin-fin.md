@@ -20,4 +20,4 @@ images:
 ---
 ## Trailer
 
-{{ youtube JctawpQSbnw }}
+{{< yt JctawpQSbnw >}}
