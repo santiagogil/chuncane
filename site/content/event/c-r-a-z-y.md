@@ -22,4 +22,3 @@ via [wikipedia](https://es.wikipedia.org/wiki/C.R.A.Z.Y.)
 
 {{< yt EwBk-hEgzkc >}}
 
-{{< spotify >}}
