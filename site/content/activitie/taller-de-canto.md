@@ -22,7 +22,8 @@ images:
 ---
 ## Para conocer mejor a la profe
 
-en facebook: https://www.facebook.com/Yanina.Lui
-en youtube: https://www.youtube.com/channel/UC1M5tMXTgTegqpeORKFRQvw
+* Entrevista: https://chuncane.com/post/entrevista-a-yani-lui/
+* en facebook: https://www.facebook.com/Yanina.Lui
+* en youtube: https://www.youtube.com/channel/UC1M5tMXTgTegqpeORKFRQvw
 
 {{< yt 3n2GlJTqbYk >}}
