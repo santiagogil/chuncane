@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+  <div class="mw6 center ph4 pv4">
+    <h1 class="f2 f1-l lh-title mb3 tight">{{ .Title }}</h1>
+    <div class="cms mw6">
+      {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+      {{ .Content | markdownify }}
+    </div>
+{{ partial "share-buttons.html" . }}
+  </div>
+{{ end }}
