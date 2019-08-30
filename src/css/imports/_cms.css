@@ -63,7 +63,6 @@
 	}
 
 	& ul {
-		margin-left: 1.33rem;
 		& >li:before {
 			content: '✱';
 			left: -1.33rem;

@@ -26,51 +26,45 @@ input, textarea {
   &:focus {
     background-color: var(--white);
   }
-  &:focus + label {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(-120%);
-  }
+  
 }
 
 ::-webkit-input-placeholder {
    color: var(--black);
    font-size: var(--spacing-medium);
    line-height: normal;
+   opacity: .5;
 }
 
 :-moz-placeholder {
    color: var(--black);
    font-size: var(--spacing-medium);
    line-height: normal;
+   opacity: .5;
 }
 
 ::-moz-placeholder {
    color: var(--black);
    font-size: var(--spacing-medium);
    line-height: normal;
+   opacity: .5;
 }
 
 :-ms-input-placeholder {
    color: var(--black);
    font-size: var(--spacing-medium);
    line-height: normal;
+   opacity: .5;
 }
 
 label
 {
   font-size: .875rem;
-  font-weight: 800;
   color: var(--white);
   background-color: var(--primary);
   border-radius: var(--border-radius);
   padding: var(--spacing-extra-small) var(--spacing-small);
-  position: absolute;
-  left: 0;
-  top: 0;
   pointer-events: none;
-  opacity: 0;
   line-height: 1;
-  transition: var(--hover-transition);
   z-index: 2;
 }
